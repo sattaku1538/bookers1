@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <title>bookers1index</title>
+    <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="sE2TTVRBzKENQpHL/Pvbom4kiKVzJP1V6eEp821MH5PVatbpguVNFceGJo/ZfTM0t+tn1nBlswmAmdkP0JyNLA==" />
+
+    <link rel="stylesheet" media="all" href="/assets/application-d12397cbc3a266ce5a99f7b588223090c55ca04a439953bb5f9304395de93fc3.css" data-turbolinks-track="reload" />
+    <script src="/assets/application-114264dd93c8ff30e4335b71eed7949d66c4e7a8eb62e2de6284c046fe07104b.js" data-turbolinks-track="reload"></script>
+  </head>
+
+  <body>
+    <p id="notice"></p>
+
+<h1>Books</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Body</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+     <% @booksshow.each do |book| %>
+      <tr>
+        <th class="books-text"><%= link_to books.title, books_path(books) %></th>
+        <th <span class="body"><%= books.body %></span>
+      </tr>
+      <% end %>
+  </tbody>
+</table>
+
+
+<h2>New book</h2>
+<%= form_with model:@bookscreate, local:true do |f| %>
+
+  <h4>title</h4>
+  <%= f.text_field :title %>
+
+  <h4>body</h4>
+  <%= f.text_area :body %>
+
+  <%= f.submit 'createbook' %>
+
+<% end %>
+  </body>
+</html>
