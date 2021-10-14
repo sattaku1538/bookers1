@@ -1,6 +1,6 @@
 <html>
     <head>
-    <title>bookers1new</title>
+    <title>bookers1show</title>
     <meta name="csrf-param" content="authenticity_token">
 <meta name="csrf-token" content="pyDsHo528JUw7OfUwKrAr1ud9iGUJGjWrfuno3GPLTHCB6m6WNJxIfooUJDlLCg5glIZUpdlJorEg1dfzF+/jg==">
 
@@ -9,18 +9,16 @@
   </head>
 
   <body>
-    <p id="notice">Book was successfully created.</p>
+    <%= flash[:alert] %>
+    
+  <p><strong>Title:</strong></p>
+  <p><%=@book.title %></p>
+  
+  <p><strong>Body:</strong></p>
+  <p><%=@book.body %></p>
 
-<p>
-  <strong>Title:</strong>
-</p>
-
-<p>
-  <strong>Body:</strong>
-</p>
-
-<%= link_to("edit", "edit") %>
-<%= link_to("back", "books") %>
+<%= link_to("Edit", edit_book_path(@book)) %>
+<%= link_to("Back", "/books") %>
 
   
 
